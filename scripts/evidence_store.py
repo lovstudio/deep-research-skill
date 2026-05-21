@@ -14,6 +14,8 @@ Evidence identity:
 All state is append-only JSONL. Evidence is never modified after capture.
 """
 
+from __future__ import annotations
+
 import argparse
 import hashlib
 import json
