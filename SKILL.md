@@ -7,8 +7,8 @@ depends_on:
   - lov-branding-consistency
 metadata:
   author: lovstudio
-  version: "2.5.3"
-  tags: deep-research citations evidence open-source github gitlab gitee reports
+  version: "2.6.0"
+  tags: deep-research citations evidence open-source github gitlab gitee reports figures rich-media
   dependencies:
     - lov-dev-blog
 ---
@@ -77,6 +77,7 @@ Mode Selection
 5. **Implementation/tooling research:** Load [open-source-solutions.md](./reference/open-source-solutions.md)
 6. **Comparison/selection/adoption research:** Load [decision-guides.md](./reference/decision-guides.md)
 7. **Long reports (>18K words):** Load [continuation.md](./reference/continuation.md)
+8. **Figures, photos, maps and diagrams (every standard+ report):** Load [rich-media.md](./reference/rich-media.md) before Phase 8 and plan the figure list together with the outline
 
 **Templates:**
 - Report structure: [report_template.md](./templates/report_template.md)
@@ -85,7 +86,7 @@ Mode Selection
 **Scripts:**
 - `python scripts/validate_report.py --report [path]`
 - `python scripts/verify_citations.py --report [path]`
-- `python scripts/md_to_html.py [markdown_path]`
+- `python scripts/md_to_html.py [markdown_path] --embed-images`
 - `python scripts/validate_open_source_solutions.py --artifact [open_source_solutions.jsonl] --report [report.md] --strict`
 - `python scripts/validate_decision_guide.py --report [report.md] --strict`
 
@@ -119,6 +120,7 @@ Mode Selection
 - Main Analysis (4-8 findings, 600-2,000 words each, cited)
 - Decision Guide (required for comparison, selection, procurement, architecture-choice, or adoption reports; place before detailed findings)
 - Open-Source Solutions Landscape (required when the topic concerns software, tooling, automation, implementation, or deployable solutions)
+- Figures (required for standard+ modes: quick ≥1, standard ≥3, deep ≥5, ultradeep ≥8): first-hand photos, charts from cited numbers, structure/process/timeline diagrams and maps, each with alt text and a numbered, sourced caption; see [rich-media.md](./reference/rich-media.md)
 - Synthesis & Insights (patterns, implications)
 - Limitations & Caveats
 - Recommendations
@@ -131,8 +133,9 @@ Mode Selection
 - `evidence.jsonl` — append-only evidence store with quotes and locators
 - `claims.jsonl` — atomic claim ledger with support status
 - `run_manifest.json` — query, mode, assumptions, provider config
+- `figures/` — figure files referenced by relative path from the Markdown report (photos EXIF-stripped)
 - `open_source_solutions.jsonl` — canonical repository registry for applicable implementation/tooling research; one verified repository per line
-- HTML (McKinsey style, auto-opened)
+- HTML (McKinsey style, self-contained with embedded figures, auto-opened)
 - PDF (professional print, auto-opened)
 
 **Quality standards:**
@@ -141,6 +144,7 @@ Mode Selection
 - Claim-support verification mandatory: no unsupported factual claims pass delivery
 - Applicable comparison/selection reports must turn decisive constraints into a branching decision flow with explicit terminal recommendations and a textual fallback; score tables alone do not pass
 - Applicable implementation/tooling reports must search GitHub plus other relevant forges, inspect repository evidence beyond README claims, publish a linked comparison table, and persist `open_source_solutions.jsonl`; an explicit no-results record is required when no repository qualifies
+- Rich media: include as many evidence-bearing visuals as the evidence allows; prefer first-hand visuals and charts built from cited numbers; never hotlink or embed unlicensed third-party images; never present AI imagery as real
 - No placeholders, no fabricated citations
 - Prose-first (>=80%), bullets sparingly
 
