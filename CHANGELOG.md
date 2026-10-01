@@ -3,6 +3,18 @@
 All notable changes to this skill are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · Versioning: [SemVer](https://semver.org/)
 
+## [2.6.1] - 2026-10-01
+
+### Changed
+
+- 精简 frontmatter `description` 至 200 字符内，保留原触发语义；完整触发与不触发条件移入正文新增的 `## Triggers`（合并原 “When to Use / NOT Use”）。
+- `metadata.tags` 改为列表；`lov-dev-blog` 从 `metadata.dependencies` 移到顶层 `depends_on`，与 `lov-branding-consistency` 并列。
+- `skill.yaml` 接入共享 `user-profile/v1` Profile 契约（`read`、`persist` 指向 `skills.deep-research`），原有字段、必填项与提问保持不变，`identity.*` 通过别名桥接 `brand.*`。
+
+### Added
+
+- `references/skill-composition.md`：相邻 Skill、交接边界、重叠决策与组合结论。
+
 ## [2.6.0] - 2026-10-01
 
 ### Added

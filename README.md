@@ -1,6 +1,6 @@
 # 深度研究 · Deep Research
 
-![Version](https://img.shields.io/badge/version-2.6.0-CC785C)
+![Version](https://img.shields.io/badge/version-2.6.1-CC785C)
 
 Enterprise-grade research engine for Claude Code. Produces citation-backed reports with source credibility scoring, multi-provider search, and automated validation.
 
@@ -100,6 +100,8 @@ deep-research/
 │   ├── rich-media.md                 # Figures, photos, maps, diagrams
 │   ├── continuation.md               # Auto-continuation protocol
 │   └── weasyprint_guidelines.md      # PDF generation
+├── references/
+│   └── skill-composition.md          # Nearby Skills, handoffs, composition decision
 ├── templates/
 │   ├── report_template.md            # Report structure template
 │   └── mckinsey_report_template.html # HTML report template
@@ -120,6 +122,7 @@ deep-research/
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 2.6.1 | 2026-10-01 | Pass the shared Skill validator: concise description with explicit Triggers, tag list, `lov-dev-blog` in `depends_on`, shared `user-profile/v1` Profile contract, composition record |
 | 2.6.0 | 2026-10-01 | Rich media contract: required figures by mode, `rich-media.md`, figure rendering with `--embed-images`, Figures validation check |
 | 2.5.3 | 2026-09-07 | Unified display name 「深度研究」 |
 | 2.5.2 | 2026-08-30 | Add early branching decision guides for comparison and solution-selection reports |
