@@ -1,6 +1,6 @@
 # 深度研究 · Deep Research
 
-![Version](https://img.shields.io/badge/version-2.6.2-CC785C)
+![Version](https://img.shields.io/badge/version-2.6.3-CC785C)
 
 Enterprise-grade research engine for Claude Code. Produces citation-backed reports with source credibility scoring, multi-provider search, and automated validation.
 
@@ -9,7 +9,7 @@ Part of [LovStudio Skills](https://lovstudio.ai/skills) — by [LovStudio](https
 ## Installation
 
 ```bash
-npx skills add lov-deep-research -g -y
+npx lovstudio skills add deep-research -g -y
 ```
 
 No additional dependencies required for basic usage.
